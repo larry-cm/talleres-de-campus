@@ -18,27 +18,17 @@ Algoritmo conversion_de_monedas
 		Escribir  "De lo contrario el cambio sera muy poco y no se aceptara"
 		
 		Leer cantidad_cambiar 
-		
-		si tipo_moneda == "usd" o tipo_moneda == "USD" Entonces
-			si cantidad_cambiar > 10000 Entonces
-				suma <- cantidad_cambiar / 4300
-				Escribir "La cantidad cambiada a pesos es " suma " dolares"
-			FinSi
-			SiNo
-				Escribir "La cantidad que intentaste cambiar es demaciada poca o nula"
-			FinSi
-			
-		si tipo_moneda == "eur" o tipo_moneda == "EUR" Entonces
-			si cantidad_cambiar > 10000 Entonces
-				suma <- cantidad_cambiar / 4326
-				Escribir "La cantidad cambiada de pesos es " suma "euros"
-			FinSi
-			SiNo
-				Escribir "La cantidad que intentaste cambiar es demaciada poca o nula"
-		FinSi
-		SiNo
-			Escribir "La operacion que intentas realizar no existe en mi conversion de monedas"
 	
+		si tipo_moneda == "usd" o tipo_moneda == "USD" y cantidad_cambiar > 10000 Entonces
+				suma <- cantidad_cambiar * 00.00025
+				Escribir "La cantidad cambiada a pesos es " suma " dolares"
+		FinSi
+		si tipo_moneda == "eur" o tipo_moneda == "EUR"  y cantidad_cambiar > 10000 Entonces
+				suma <- cantidad_cambiar * 00.0045
+				Escribir "La cantidad cambiada de pesos es " suma "euros"
+		FinSi	
+		Sino
+			Escribir "La operacion que intentas realizar no existe en mi conversion de monedas o es muy poco para el cambio"
 	FinSi
 
 	
